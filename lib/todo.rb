@@ -1,6 +1,8 @@
+require_relative 'assignment_helper'
 require 'csv'
 
 class Todo
+  include AssignmentHelper
 
   def initialize(file_name)
     @file_name = file_name #Don't touch this line or var
@@ -20,7 +22,7 @@ class Todo
       puts "What would you like to do?"
       puts "1) Exit 2) Add Todo 3) Mark Todo As Complete"
       print " > "
-      action = gets.chomp.to_i
+      action = get_input.to_i
       case action
       when 1 then exit
       when 2 then add_todo
@@ -52,7 +54,7 @@ class Todo
 
   private # Don't edit the below methods, but use them to get player input and to save the csv file
   def get_input
-    gets.chomp
+    STDIN.gets.chomp
   end
 
   def save!

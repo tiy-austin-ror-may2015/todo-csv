@@ -24,3 +24,5 @@ end
 # Dont touch ^^^
 
 
+module AssignmentHelper
+end
